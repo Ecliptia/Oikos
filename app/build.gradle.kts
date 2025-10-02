@@ -1,5 +1,4 @@
-import java.util.Properties
-import java.io.FileInputStream
+
 
 plugins {
     alias(libs.plugins.android.application)
@@ -15,10 +14,6 @@ android {
     namespace = "com.ecliptia.oikos"
     compileSdk = 36
 
-    // Load keystore properties
-    val keystoreProperties = Properties().apply {
-        load(FileInputStream(rootProject.file("keystore.properties")))
-    }
 
     defaultConfig {
         applicationId = "com.ecliptia.oikos"
@@ -35,10 +30,17 @@ android {
 
     signingConfigs {
         create("release") {
-            storeFile = rootProject.file("oikos-release-key.jks") // Corrected path
-            storePassword = keystoreProperties.getProperty("storePassword")
-            keyAlias = keystoreProperties.getProperty("keyAlias")
-            keyPassword = keystoreProperties.getProperty("keyPassword")
+            val storeFile = System.getenv("OIKOS_RELEASE_KEYSTORE_PATH")?.let { file(it) }
+            val storePassword = System.getenv("OIKOS_RELEASE_KEYSTORE_PASSWORD")
+            val keyAlias = System.getenv("OIKOS_RELEASE_KEY_ALIAS")
+            val keyPassword = System.getenv("OIKOS_RELEASE_KEY_PASSWORD")
+
+            if (storeFile != null && storeFile.exists() && storePassword != null && keyAlias != null && keyPassword != null) {
+                this.storeFile = storeFile
+                this.storePassword = storePassword
+                this.keyAlias = keyAlias
+                this.keyPassword = keyPassword
+            }
         }
     }
 
