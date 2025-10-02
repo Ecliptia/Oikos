@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "918182457543",
+    "firebase_url": "https://oikos-79b06-default-rtdb.firebaseio.com",
+    "project_id": "oikos-79b06",
+    "storage_bucket": "oikos-79b06.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:918182457543:android:c23f1491797eb7e6950ee2",
+        "android_client_info": {
+          "package_name": "com.ecliptia.oikos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "918182457543-i6s0cr9c01ob70thdi9brq26kqh4aajh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ecliptia.oikos",
+            "certificate_hash": "b0aec2657f3891b50498dcc8063cac606de54e17"
+          }
+        },
+        {
+          "client_id": "918182457543-ld8jd8rpa2d2gkh9rp9lrjli1s17d1ek.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDKaqG07vgOSeL2cUW1oNeeKUsAv9BEjE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "918182457543-ld8jd8rpa2d2gkh9rp9lrjli1s17d1ek.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
